@@ -4,3 +4,10 @@
 .thumbnail{
     padding: 0;
 }
+img{
+    width: 250px;
+    height: 200px;
+}
+#delete-form{
+    display: inline;
+}

@@ -14,7 +14,7 @@
             <div class="thumbnail">
                 <img class="img-responsive" src="<%= campground.image %>">
                 <div class="caption">
-                    <h4 class="pull-right">$9.00/night</h4>
+                    <h4 class="pull-right"><%= campground.price %>$/night</h4>
                     <h4><a><%= campground.name %></a></h4>
                     <p><%= campground.description %></p>
                     <p>
@@ -22,7 +22,7 @@
                     </p>
                     <% if (currentUser && campground.author.id.equals(currentUser._id)){ %>
                     <a class="btn btn-xs btn-warning" href="/campgrounds/<%= campground._id %>/edit">Edit</a>
-                    <form id="delete-form" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="post">
+                    <form class="delete-form" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="post">
                         <button class="btn btn-xs btn-danger"> Delete</button>
                     </form>
                     <% } %>
@@ -47,7 +47,7 @@
                            href="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit">
                             Edit
                         </a>
-                        <form id="delete-form" action="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                        <form class="delete-form" action="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
                             <input type="Submit" class="btn btn-xs btn-danger" value="Delete">
                         </form>
                         <%}%>
